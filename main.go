@@ -20,7 +20,15 @@ func main() {
 
 	for scanner.Scan() {
 		row := scanner.Text()
+
 		numerals := extractStringNumbers(row)
+
+		if len(numerals) > 2 {
+			numerals = numerals[:1] + numerals[len(numerals)-1:]
+		}
+		if len(numerals) == 1 {
+			numerals = numerals + numerals
+		}
 		val, _ := strconv.Atoi(numerals)
 		total += int64(val)
 	}
