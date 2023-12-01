@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	file, err := os.Open("cali.txt")
+	file, err := os.Open("calibration_input.txt")
 	if err != nil {
 		fmt.Println("Error:", err)
 		return
